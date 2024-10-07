@@ -4,8 +4,6 @@ body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
 }
-
-
 header {
     display: flex;
     flex-direction: row;
@@ -15,13 +13,22 @@ header {
 }
 
 h1 {
+    font-size: 30px;
     color: #901C1C;
     margin-right: 100px;
 }
+h3{
+    font-size: 13px;
+    line-height: 16px;
+}
+.price{
+    font-size: 13px;
+}
 
 .logo {
-    height: 50px;
+    height: 30px;
     margin-left: 100px;
+    cursor: pointer;
 }
 
 .photographer_section {
@@ -30,21 +37,35 @@ h1 {
     gap: 70px;
     margin-top: 100px;
 }
+.photographer_section img:focus{
+    background-color: red;
+}
+.description-div {
+    line-height: 8px;
+}
 
-.photographer_section article {
+ article {
     justify-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     flex-direction: column;
+    line-height: 1px;
+    cursor: pointer;
 }
 
-.photographer_section article h2 {
+  h2 {
     color: #D3573C;
-    font-size: 36px;
+    font-size: 25px;
 }
 
-.photographer_section article img {
+ article img {
     height: 200px;
     width: 200px;
+    border-radius: 50%;
+    object-fit:cover;
+}
+.photographer_section article .location{
+    color: #901C1C;
 }

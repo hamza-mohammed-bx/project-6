@@ -1,31 +1,11 @@
-    async function getPhotographers() {
-        // Ceci est un exemple de données pour avoir un affichage de photographes de test dès le démarrage du projet, 
-        // mais il sera à remplacer avec une requête sur le fichier JSON en utilisant "fetch".
-        let photographers = [
-            {
-                "name": "Ma data test",
-                "id": 1,
-                "city": "Paris",
-                "country": "France",
-                "tagline": "Ceci est ma data test",
-                "price": 400,
-                "portrait": "account.png"
-            },
-            {
-                "name": "Autre data test",
-                "id": 2,
-                "city": "Londres",
-                "country": "UK",
-                "tagline": "Ceci est ma data test 2",
-                "price": 500,
-                "portrait": "account.png"
-            },
-        ]
-        // et bien retourner le tableau photographers seulement une fois récupéré
-        return ({
-            photographers: [...photographers, ...photographers, ...photographers]})
+  async function getPhotographers() {
+        let patch = "http://127.0.0.1:5500/Front-End-Fisheye/data/photographers.json"
+        let photographers = await fetch(`${patch}`)
+        photographers = photographers.json();
+        return photographers     
     }
 
+   
     async function displayData(photographers) {
         const photographersSection = document.querySelector(".photographer_section");
 
@@ -33,7 +13,23 @@
             const photographerModel = photographerTemplate(photographer);
             const userCardDOM = photographerModel.getUserCardDOM();
             photographersSection.appendChild(userCardDOM);
+            userCardDOM.addEventListener("click", function(e){
+                console.log(this);
+                
+            console.log(e.target);
+        
+                document.location.href = "http://127.0.0.1:5500/Front-End-Fisheye/photographer.html/80";
+                const thisPhotographer = this.outerHTML
+                
+                
+                const  photographHeader = document.querySelector(".photograph-header");
+                const btnModal = `<button class="contact_button" onclick="displayModal()">Contactez-moi</button>`
+                let dataCard = this.outerHTML;
+                photographHeader.innerHTML = dataCard + btnModal ; 
+                document.querySelector('.price').remove();
+            })
         });
+        
     }
 
     async function init() {
@@ -43,4 +39,7 @@
     }
     
     init();
+    
+    
+    
     

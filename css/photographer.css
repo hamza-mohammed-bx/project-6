@@ -3,12 +3,112 @@
 }
 
 .photograph-header {
+    display: flex;
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
 }
+.photograph-header .header-description {
+    width: 100%;
+    padding: 0 30px;
+    justify-self: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.photograph-header .header-description h2{
+    font-size: 30px;
+}
+.photographer-section{
+    display: flex;
+    gap: 50px;
+    margin: 0 100px;
+    flex-wrap: wrap;
+}
+.photographer-media{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    margin: 0 auto;
+}
+.photographer-media h2 {
+    font-size: 18px;
+}
+.photographer-section .description-div{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+.photographer-media img , .photographer-media video{
+    width: 350px;
+    height: 300px;
+}
+
+.img-list, .video {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    object-fit:cover;
+}
+.photographer-section .description-div i {
+    color:#901C1C ;
+    left: 90%;
+    cursor: pointer;
+}
+
+.photographer-section .description-div .heart {
+	cursor: pointer;
+}
+
+/* .pulse {
+	animation: pulse .5s;
+} */
+
+/* @keyframes pulse {
+	0% {transform: scale(1); }
+	100% {transform: scale(1);}
+	100% {transform: scale(1);}
+} */
+.photographer-section .description-div p {
+    position: absolute;
+    left: 80%;
+}
+/* start  filter section */
+
+.filter{
+    margin: 20px 100px;
+}
+.filter label{
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 20px ;
+}
+.filter .select-filter{
+    width: 170px;
+    height: 70px;
+    background-color: #901C1C;
+    color:white;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    border: none;
+}
+
 
 .contact_button {
+    position: absolute;
+    left: 41%;
+    bottom: 70%;
     font-size: 20px;
     font-weight: bold;
     color: white;
